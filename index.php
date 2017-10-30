@@ -1,5 +1,5 @@
 <?php
 
-header(' Location="http://www.creativehomesales.org/home/index.html" ');
+header(' Location: http://www.creativehomesales.org/home/index.html ');
 
 ?>
