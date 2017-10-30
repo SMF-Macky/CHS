@@ -7,9 +7,65 @@
     <meta name="viewport" content="width=device-width intial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="http://www.creativehomesales.org/css/home.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        .w3-quicksand {
+            font-family: 'Quicksand'
+        }
+
+    </style>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+    </script>
 </head>
 
 <body id="myPage">
@@ -20,14 +76,14 @@
             <a href="#about-us" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
             <a href="http://www.creativehomesales.org/contact-us/contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact Us</a>
             <a href="http://www.creativehomesales.org/services/listing-buddy.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Listings</a>
-            <div class="w3-dropdown-hover w3-hide-small">
+            <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
                 <button class="w3-button" title="Notifications">Featured <i class="fa fa-caret-down"></i></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                     <a href="http://www.creativehomesales.org/featured/featured-sites.html" class="w3-bar-item w3-button">Featured Websites</a>
                     <a href="http://www.creativehomesales.org/featured/featured-listings.html" class="w3-bar-item w3-button">Featured Listings</a>
                 </div>
             </div>
-            <div class="w3-dropdown-hover w3-hide-small">
+            <div class="w3-dropdown-hover w3-hide-small w3-hover-white">
                 <button class="w3-button" title="Notifications">Other <i class="fa fa-caret-down"></i></button>
                 <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                     <a href="http://www.creativehomesales.org/services/property-search.html" class="w3-bar-item w3-button">Property Search</a>
@@ -37,25 +93,51 @@
             </div>
         </div>
     </div>
-    <div class="w3-display-container w3-animate-opacity">
-        <img src="images\sailboat.jpg" alt="Actual Home Image coming soon!" style="width:100%;min-height:350px;max-height:600px;">
-        <div class="w3-container w3-display-bottomleft w3-margin-bottom">
-            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To ListingBuddy!">Learn more!</button>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="/home/images/slide1.jpg" style="width:100%">
+            <div class="text">Homes you'll love!</div>
         </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="/home/images/slide2.jpg" style="width:100%">
+            <div class="text">We provice accurate information and assistance!</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="/home/images/slide3.jpg" style="width:100%">
+            <div class="text">Whatever you need, here at CHS!<i class="fa fa-smile-o"></i></div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To ListingBuddy!">Learn more!</button>
+    </div>
     </div>
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-top">
             <header class="w3-container w3-teal w3-display-container">
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                <h4>This is a home that is featured on our front page!</h4>
-                <h5>This could be <a href="/featured/listingbuddy/login.aspx">YOUR listing!</a> <i class="fa fa-smile-o"></i></h5>
+                <h4>We update these slides as FL's come in</h4>
+                <h5>This could be <a href="/featured/listingbuddy/submit.aspx">YOUR listing!</a> <i class="fa fa-smile-o"></i></h5>
             </header>
             <div class="w3-container">
-                <p>Click the link above <i class="fa fa-smile-o"></i></p>
-                <p>Go to our <a class="w3-text-teal" href="http://www.listingbuddy.com/signup.aspx">LB website</a>...</p>
+                <p>Click the link above</p>
+                <br>
             </div>
             <footer class="w3-container w3-teal">
-                <p>For a CHS exclusive offer!</p>
+                <p>Thank you!</p><i class="fa fa-smile-o"></i>
             </footer>
         </div>
     </div>
@@ -96,19 +178,35 @@
         <h2>ABOUT CHS</h2>
         <p>Read about CHS and the origins of our company</p>
 
-        <div>
+        <div class="w3-padding-16 w3-quicksand">
             <p>
-                Creative Home Sales was the brainchild of Martha Ehlert and Joyce Austin as seen above. Martha is the daughter of Joyce and together they work as a team.
-                The work they do is directly attributed to housing and real estate, Martha used to do a lot of work in HUD Housing before working at an apartment complex.
-                Joyce worked in HUD Housing for years before getting her RE License, allowing her the freedom to sell homes that weren't only attached to HUD. Joyce and
-                Martha recently decided to work together on a project that they asked Martha's son Malachi to build a website for; Creative Home Sales. Malachi and Meakoda
-                are the two founding members of Orion Solutions, a Freelancing organization that privides IT Consulting, Web Development and other freelance jobs. Together,
-                these four are building an empire known as Creative Home Sales, attributing it with Orion Solutions.
+                Creative Home Sales was the brainchild of Martha Ehlert and Joyce Austin as seen above. Martha is the daughter of Joyce and together they work as a team. The work they do is directly attributed to housing and real estate, Martha used to do a lot of work in HUD Housing before working at an apartment complex. Joyce worked in HUD Housing for years before getting her RE License, allowing her the freedom to sell homes that weren't only attached to HUD. Joyce and Martha recently decided to work together on a project that they asked Martha's son Malachi to build a website for; Creative Home Sales. Malachi and Meakoda are the two founding members of Orion Solutions, a Freelancing organization that privides IT Consulting, Web Development and other freelance jobs. Together, these four are building an empire known as Creative Home Sales, attributing it with Orion Solutions.
             </p><br />
             <p id="closure">
                 Written by: Malachi Austin, Co-Founder of Orion Solutions and Web Developer for Creative Home Sales. (October 30th, 2017)
             </p>
         </div>
     </div>
+
+    <footer>
+        <div class="w3-container w3-padding-64">
+            <p>Thank you for visiting our site! We hope that our information was of use to you and if it wasn't, then don't hesitate to report your issue to us from the <a href="/contact-us/contact.html">Contact page!</a></p>
+        </div>
+
+        <div class="w3-container w3-center">
+            <h3>Sitemap</h3><br />
+            <div class="w3-container">
+                <nav style="font-size:24px;font-family:'Quicksand';font:bold;margin:2%;">
+                    <a href="index.html" class="w3-padding-64 w3-quicksand" style="margin:2%;"><i class="fa fa-home"></i></a>
+                    <a href="/contact-us/contact.html" class="w3-padding-64 w3-quicksand" style="text-decoration: none;margin: 2%;">Contact</a>
+                    <a href="/featured/listingbuddy.html" class="w3-padding-64 w3-quicksand" style="text-decoration: none;margin: 2%;">Listings</a>
+                    <a href="/featured/featuredwebsites.html" class="w3-padding-64 w3-quicksand" style="text-decoration: none;margin: 2%;">Featured Sites</a>
+                    <a href="/home/other.html" class="w3-padding-64 w3-quicksand" style="text-decoration: none;margin: 2%;">Other</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>
