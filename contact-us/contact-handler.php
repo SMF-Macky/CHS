@@ -5,7 +5,7 @@ $myemail  = "customerservice@smfreelancing.com";
 $fullname  = check_input($_POST['fullname'], "Enter your name");
 $phonenumber  = check_input($_POST['phonenumber'], "Enter your phone number");
 $emailaddress  = check_input($_POST['emailaddress'], "Enter your email address");
-$buyorsell  = check_input($_POST['buyorsell'], "Make a selection")
+$buyorsell  = check_input($_POST['buyorsell'], "Make a selection");
 $comments  = check_input($_POST['comments'], "Write your comments");
 
 /* If e-mail is not valid show error message */
