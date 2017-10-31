@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width intial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="http://www.creativehomesales.org/img/favicon.ico" />
     <link rel="stylesheet" href="http://www.creativehomesales.org/css/home.css" />
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css" />
@@ -16,24 +17,6 @@
             font-family: 'Quicksand'
         }
     </style>
-    <script>
-        var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 9499); // Change image every 9.499 seconds
-        }
-    </script>
 </head>
 
 <body id="myPage">
@@ -84,14 +67,31 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
+    <script>
+        var slideIndex = 0;
+        showSlides();
 
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 9499); // Change image every 9.499 seconds
+        }
+    </script>
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To ListingBuddy!">Learn more!</button>
-    </div>
+    <div>
     </div>
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-top">
