@@ -15,39 +15,8 @@
         .w3-quicksand {
             font-family: 'Quicksand'
         }
-
     </style>
     <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
         var slideIndex = 0;
         showSlides();
 
@@ -64,7 +33,6 @@
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
-
     </script>
 </head>
 
@@ -96,20 +64,20 @@
     <div class="slideshow-container">
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="http://www.creativehomesales.org/home/images/slide1.jpg" style="width:100%">
-            <div class="text">Homes you'll love!</div>
+            <img src="http://www.creativehomesales.org/home/images/slide4.jpg" style="width:100%">
+            <div class="text">Make the right choice!</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="http://www.creativehomesales.org/home/images/slide2.jpg" style="width:100%">
-            <div class="text">We provice accurate information and assistance!</div>
+            <img src="http://www.creativehomesales.org/home/images/slide10.jpg" style="width:100%">
+            <div class="text">Find the right home for you!</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="http://www.creativehomesales.org/home/images/slide3.jpg" style="width:100%">
-            <div class="text">Whatever you need, here at CHS!<i class="fa fa-smile-o"></i></div>
+            <img src="http://www.creativehomesales.org/home/images/slide11.jpg" style="width:100%">
+            <div class="text">Choose Creatively!</div>
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -137,7 +105,7 @@
                 <br>
             </div>
             <footer class="w3-container w3-teal">
-                <p>Thank you!</p><i class="fa fa-smile-o"></i>
+                <p>Thank you! <i class="fa fa-smile-o"></i></p>
             </footer>
         </div>
     </div>
@@ -206,7 +174,5 @@
             </div>
         </div>
     </footer>
-
 </body>
-
 </html>
