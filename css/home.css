@@ -13,9 +13,10 @@
 
 .slideshow-container {
     max-width: 1800px;
-    max-height: 300px;
+    max-height: 600px;
     position: relative;
     margin: auto;
+    overflow: hidden;
 }
 
 .mySlides {
